@@ -1,5 +1,921 @@
+/* Animation pour le fond du header */
+.header .gradient-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #007BFF, #6C63FF, #FF6584);
+    background-size: 300% 300%;
+    z-index: -1;
+    animation: gradient-animation 6s ease infinite;
+}
+
+@keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Nouveau: Fond morphing animé */
+:root {
+    --color-bg1: rgb(108, 0, 162);
+    --color-bg2: rgb(0, 17, 82);
+    --color1: 18, 113, 255;
+    --color2: 221, 74, 255;
+    --color3: 100, 220, 255;
+    --color4: 200, 50, 50;
+    --color5: 180, 180, 50;
+    --color-interactive: 140, 100, 255;
+    --circle-size: 80%;
+    --blending: hard-light;
+}
+
+/* Fond animé limité au header */
+.gradient-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Place le fond derrière le contenu */
+    overflow: hidden;
+    background: linear-gradient(
+        40deg,
+        rgb(108, 0, 162),
+        rgb(0, 17, 82),
+        rgb(0, 123, 255),
+        rgb(200, 50, 100)
+    );
+    animation: gradientAnimation 10s infinite alternate;
+    filter: blur(10px) brightness(0.8); /* Ajuste la luminosité et ajoute un flou */
+}
+
+
+
+
+
+
+.gradients-container {
+    filter: blur(40px);
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.g1, .g2, .g3, .g4, .g5 {
+    position: absolute;
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    mix-blend-mode: var(--blending);
+
+}
+
+.g1 {
+    background: radial-gradient(circle, rgba(var(--color1), 0.8) 0%, rgba(var(--color1), 0) 70%);
+    animation: moveVertical 30s infinite ease-in-out;
+}
+
+.g2 {
+    background: radial-gradient(circle, rgba(var(--color2), 0.8) 0%, rgba(var(--color2), 0) 70%);
+    animation: moveInCircle 20s infinite reverse linear;
+}
+
+.g3 {
+    background: radial-gradient(circle, rgba(var(--color3), 0.8) 0%, rgba(var(--color3), 0) 70%);
+    animation: moveInCircle 40s infinite linear;
+}
+
+.g4 {
+    background: radial-gradient(circle, rgba(var(--color4), 0.8) 0%, rgba(var(--color4), 0) 70%);
+    animation: moveHorizontal 40s infinite ease-in-out;
+}
+
+.g5 {
+    background: radial-gradient(circle, rgba(var(--color5), 0.8) 0%, rgba(var(--color5), 0) 70%);
+    animation: moveInCircle 20s infinite ease;
+}
+
+/* Interactive Element */
+.interactive {
+    position: absolute;
+    background: radial-gradient(circle, rgba(var(--color-interactive), 0.8) 0%, rgba(var(--color-interactive), 0) 70%);
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    opacity: 0.7;
+    pointer-events: none;
+    mix-blend-mode: var(--blending);
+}
+
+
+/* Animations */
+@keyframes moveInCircle {
+    0% {
+        transform: rotate(0deg) translate(-50%, -50%);
+    }
+    50% {
+        transform: rotate(180deg) translate(50%, 50%);
+    }
+    100% {
+        transform: rotate(360deg) translate(-50%, -50%);
+    }
+}
+
+@keyframes moveVertical {
+    0%, 100% {
+        transform: translateY(-50%);
+    }
+    50% {
+        transform: translateY(50%);
+    }
+}
+
+@keyframes moveHorizontal {
+    0%, 100% {
+        transform: translateX(-50%);
+    }
+    50% {
+        transform: translateX(50%);
+    }
+}
+
+
+/*header text*/
+
+
+
+.header .text-container {
+    margin-top: 3rem; /* Move content down */
+    text-align: center;
+}
+
+.header .text-container h1 {
+    padding-top: 2rem; /* Push the title */
+    font-size: 2.5rem;
+    color: white;
+    margin: 0;
+}
+
+.header .text-container p {
+    font-size: 1.2rem;
+    color: white;
+    margin-top: 0.5rem;
+}
+
+
+
+/* Conteneur des ondes dynamiques */
+.wave-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 120px;
+    overflow: hidden;
+    z-index: -1; /* Pour s'assurer que les ondes restent derrière le contenu */
+}
+
+.wave {
+    width: 100%;
+    height: auto;
+}
+
+/* Ajustement des transitions pour une animation fluide */
+.wave path {
+    transition: fill 0.5s ease-in-out;
+}
+
+body.dark-mode .wave-container .wave path {
+    fill: url(#dark-gradient);
+}
+
+body.dark-mode .wave-container .wave defs {
+    display: none; /* Cache l'ancien dégradé */
+}
+
+/* Dégradé sombre */
+body.dark-mode .wave-container {
+    background: linear-gradient(45deg, #121212, #1e1e1e);
+}
+.image-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.profile-image,
+.profile-image-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 1s ease; /* Smooth transition */
+}
+
+.profile-image-hover {
+    animation: image-fade 3s infinite alternate; /* Auto transition */
+    opacity: 0; /* Starts invisible */
+}
+
+@keyframes image-fade {
+    0%, 50% {
+        opacity: 0; /* Start and half: first image visible */
+    }
+    51%, 100% {
+        opacity: 1; /* End: second image visible */
+    }
+}
+/* Section language*/
+/* Langues - Conteneur */
+.language-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+/* Chaque carte de langue */
+.language-card {
+    text-align: center;
+    background-color: #f8f9fa; /* Fond clair */
+    padding: 1rem;
+    border-radius: 15px; /* Coins arrondis */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Ombre douce */
+    width: 150px; /* Taille uniforme */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.language-card:hover {
+    transform: translateY(-5px); /* Léger soulèvement */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Image des drapeaux */
+.flag-icon {
+    width: 100%; /* Remplit bien la largeur */
+    max-width: 90px;
+    height: auto;
+    border-radius: 10px; /* Coins arrondis pour les drapeaux */
+    margin-bottom: 0.5rem;
+}
+
+/* Titre des langues */
+.language-card h3 {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    color: #333;
+    margin: 0.5rem 0;
+}
+
+/* Texte descriptif */
+.language-card p {
+    color: #555;
+    font-size: 0.9rem;
+}
+
+
+/* Galerie Container pour Passion */
+.gallery {
+    display: flex;
+    flex-wrap: wrap; /* Adaptation sur petits écrans */
+    justify-content: center;
+    gap: 1.5rem; /* Espacement entre les cartes */
+    margin-top: 2rem;
+}
+
+/* Carte Individuelle */
+.gallery-item {
+    background: #f8f9fa; /* Fond doux */
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 250px; /* Taille fixe des cartes */
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px); /* Effet de survol */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Image */
+.gallery-image {
+    width: 100%;
+    height: 150px; /* Hauteur fixe */
+    object-fit: cover; /* Image centrée et redimensionnée */
+}
+
+/* Titre et Description */
+.gallery-item h3 {
+    margin: 0.8rem 0 0.5rem;
+    font-family: 'Georgia', serif;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.gallery-item p {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 0 1rem 1.5rem;
+}
+
+
+/* Galerie vidéo */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.gallery-item {
+    position: relative;
+    text-align: center;
+    width: 250px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-item.active {
+    transform: scale(1.1); /* Agrandit la vidéo sélectionnée */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-video {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+/* Competences*/
+/* Section générale */
+#skills {
+    padding: 2rem 0;
+    background: #f8f9fa;
+    text-align: center;
+}
+
+#skills h2 {
+    margin-bottom: 2rem;
+    color: #007BFF;
+}
+
+/* Grille des compétences */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+/* Cartes individuelles */
+.skill-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.skill-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.skill-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Barres de progression */
+.progress-bar {
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    height: 20px;
+    margin: 1rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-fill {
+    background-color:#007BFF ;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+    transition: width 1s ease;
+    position: relative;
+}
+
+/* Texte dynamique */
+/* Labels dynamiques */
+.percentage-label, .hidden-label {
+    position: absolute;
+    top: -25px; /* Positionne le texte au-dessus */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #007BFF;
+    display: none; /* Caché par défaut */
+    transition: opacity 0.3s ease;
+    pointer-events: none; /* Empêche les interactions avec la souris */
+}
+
+/*Section Soft Skill*/
+/* Grille des compétences */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    text-align: center;
+}
+
+/* Cartes individuelles */
+.skill-card {
+    background: #f8f9fa;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    position: relative;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.skill-card h3 {
+    margin: 0 0 0.5rem;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.skill-description {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #555;
+    display: none; /* Cachée par défaut */
+}
+
+
+
+
+/* Section Soft Skills 2 */
+.section#soft-skills {
+    padding: 2rem 0;
+    background-color: #f1f1f1;
+}
+
+.section#soft-skills h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #007BFF;
+    border-bottom: 2px solid #007BFF;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1.5rem;
+    max-width: 100
+}
+/*Parcours*/
+
+/* Section Timeline */
+.timeline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-top: 2rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Années */
+.year {
+    flex: 1;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.year:hover {
+    color: #007BFF;
+    transform: scale(1.1);
+}
+
+/* Personnage */
+.character {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    font-size: 2rem;
+    transition: left 0.5s ease;
+}
+
+/* Popup */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    width: 80%;
+    max-width: 500px;
+}
+
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #333;
+}
+
+.popup-close:hover {
+    color: red;
+}
+
+/*Project*/
+
+.filter-buttons {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.filter-buttons button {
+    background: #007BFF;
+    color: white;
+    border: none;
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.filter-buttons button:hover {
+    background: #0056b3;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-item {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.project-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.project-item:hover img {
+    transform: scale(1.05);
+}
+
+.project-buttons .btn {
+    display: inline-block;
+    margin: 0.5rem 0.5rem 0 0;
+    padding: 0.5rem 1rem;
+    background: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.project-buttons .btn:hover {
+    background: #0056b3;
+}
+
+
+
+
+/* Section Contact */
+#contact {
+    text-align: center;
+    padding: 2rem 0;
+    background: #f8f9fa;
+}
+
+#contact h2 {
+    margin-bottom: 1.5rem;
+    color: #007BFF;
+    font-size: 2rem;
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: #333;
+    font-size: 1.1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-item img {
+    width: 35px;
+    height: 35px;
+    transition: transform 0.3s ease;
+}
+
+.contact-item:hover {
+    color: #007BFF;
+    transform: scale(1.1);
+}
+
+.contact-item:hover img {
+    transform: rotate(10deg) scale(1.1);
+}
+
+.download-cv {
+    margin-top: 2rem;
+}
+
+.download-cv .button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.download-cv .button:hover {
+    background: #0056b3;
+}
+
+/* Bouton Envoyer */
+.button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+/* Styles existants */
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 50px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.6;
+    color: #333;
 }
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+
+/* Section Présentation */
+.presentation {
+    padding: 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap; /* Permet de s'adapter aux petits écrans */
+    gap: 1.5rem; /* Espace entre les colonnes */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Image */
+.image-container {
+    flex: 1; /* Prend 1 part de l'espace disponible */
+    max-width: 300px; /* Taille maximale de l'image */
+    text-align: center;
+}
+
+.profile-image {
+    width: 100%; /* L'image occupe toute la largeur de son conteneur */
+    height: auto;
+    border-radius: 10px; /* Ajoute des coins arrondis */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre pour un effet de relief */
+}
+
+/* Texte */
+.text-container {
+    flex: 2; /* Prend 2 parts de l'espace disponible */
+    max-width: 1000px; /* Taille maximale pour le texte */
+    line-height: 2; /* Espace entre les lignes */
+    color: #333; /* Couleur du texte */
+}
+
+
+.image-container::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: -1;
+    border-radius: 10px;
+    filter: blur(8px);
+}
+
+.text-container h2 {
+    color: #0073e6; /* Couleur principale pour le titre */
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.text-container p {
+    margin-bottom: 1rem;
+}
+
+
+/* Header avec fond animé */
+.header {
+    position: relative;
+    height: 50vh; /* Hauteur pleine page pour le header */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+    overflow: hidden; /* Assure que le fond ne déborde pas */
+}
+
+
+/* Default navigation bar styles */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #007BFF;
+    color: white;
+    z-index: 1000;
+    padding: 1rem 2rem; /* Large padding initially */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease; /* Smooth transition for changes */
+}
+
+.nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav a {
+    text-decoration: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem; /* Default font size */
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+    color: #ffeb3b;
+}
+
+/* Smaller navigation bar on scroll */
+.nav.scrolled {
+    padding: 0.5rem 1rem; /* Reduce padding */
+    background-color: #0056b3; /* Optional: Change color when scrolled */
+}
+
+.nav.scrolled a {
+    font-size: 1rem; /* Reduce font size */
+}
+
+
+.section {
+    padding: 2rem 0;
+    border-bottom: 1px solid #ccc;
+}
+
+h2 {
+    color: #0073e6;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.skill-category h3 {
+    color: #333;
+}
+
+.skill-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skill-category ul li {
+    background: #f4f4f4;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: #0073e6;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
