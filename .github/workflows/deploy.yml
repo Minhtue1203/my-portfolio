@@ -25,4 +25,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger Render Deployment
-        run: curl -X POST "https://api.render.com/deploy/webhooks/${{ secrets.RENDER_DEPLOY_KEY }}"
+        env:
+          RENDER_DEPLOY_KEY: ${{ secrets.RENDER_DEPLOY_KEY }}
+        run: curl -X POST "$RENDER_DEPLOY_KEY"
