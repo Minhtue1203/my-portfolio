@@ -57,6 +57,25 @@ videos.forEach((video) => {
     });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const videos = document.querySelectorAll('.gallery-video');
+
+    videos.forEach((video) => {
+        video.addEventListener('click', async () => {
+            try {
+                if (document.pictureInPictureElement) {
+                    await document.exitPictureInPicture();
+                } else {
+                    await video.requestPictureInPicture();
+                }
+            } catch (error) {
+                console.error('Error entering Picture-in-Picture mode:', error);
+            }
+        });
+    });
+});
+
+
 
 /* competence interface */
 document.querySelectorAll('.progress-bar').forEach((bar) => {

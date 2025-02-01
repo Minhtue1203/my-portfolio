@@ -131,14 +131,13 @@
         </section>
 
 
-
         <!-- Section Passions -->
         <section id="hobbies" class="section">
             <div class="container">
                 <h2>Passions</h2>
                 <div class="gallery">
                     <div class="gallery-item">
-                        <video class="gallery-video" muted loop>
+                        <video class="gallery-video" id="guitarVideo" playsinline>
                             <source src="videos/guitarfingerstyle.mp4" type="video/mp4">
                             Votre navigateur ne supporte pas les vidéos.
                         </video>
@@ -146,7 +145,7 @@
                         <p>Passion pour la musique acoustique et électrique.</p>
                     </div>
                     <div class="gallery-item">
-                        <video class="gallery-video" muted loop>
+                        <video class="gallery-video" id="basketVideo" playsinline>
                             <source src="videos/basketball.mp4" type="video/mp4">
                             Votre navigateur ne supporte pas les vidéos.
                         </video>
@@ -154,7 +153,7 @@
                         <p>Rester en forme tout en jouant en équipe.</p>
                     </div>
                     <div class="gallery-item">
-                        <video class="gallery-video" muted loop>
+                        <video class="gallery-video" id="magicVideo" playsinline>
                             <source src="videos/Levitation.mp4" type="video/mp4">
                             Votre navigateur ne supporte pas les vidéos.
                         </video>
@@ -164,6 +163,8 @@
                 </div>
             </div>
         </section>
+
+
 
 
 
@@ -230,27 +231,31 @@
             <div class="container">
                 <h2>Soft Skills</h2>
                 <div class="skills-grid">
-                    <div class="skill-card" data-description="Je m'adapte facilement aux nouveaux environnements et équipes. Mon changement de parcours à l'IUT témoigne de ma capacité à m'adapter rapidement et m'a permis de développer des compétences solides et dynamiques en programmation, notamment avec Python et Java">
+                    <div class="skill-card"
+                        data-description="Je m'adapte facilement aux nouveaux environnements et équipes. Mon changement de parcours à l'IUT témoigne de ma capacité à m'adapter rapidement et m'a permis de développer des compétences solides et dynamiques en programmation, notamment avec Python et Java">
                         <h3>Adaptabilité</h3>
                         <p class="skill-description"></p>
                     </div>
-                    <div class="skill-card" data-description="Je garde ma persévérance même face à des défis complexes.">
+                    <div class="skill-card"
+                        data-description="Je garde ma persévérance même face à des défis complexes.">
                         <h3>Persévérance</h3>
                         <p class="skill-description"></p>
                     </div>
-                    <div class="skill-card" data-description="Je travaille de manière rigoureuse pour atteindre des résultats précis.">
+                    <div class="skill-card"
+                        data-description="Je travaille de manière rigoureuse pour atteindre des résultats précis.">
                         <h3>Rigueur</h3>
                         <p class="skill-description"></p>
                     </div>
-                    <div class="skill-card" data-description="J'aborde les problèmes avec des solutions créatives et originales. Grâce à ma passion pour la magie, je sais anticiper les attentes et je recherche toujours des méthodes impressionnantes et efficaces">
+                    <div class="skill-card"
+                        data-description="J'aborde les problèmes avec des solutions créatives et originales. Grâce à ma passion pour la magie, je sais anticiper les attentes et je recherche toujours des méthodes impressionnantes et efficaces">
                         <h3>Créativité</h3>
                         <p class="skill-description"></p>
                     </div>
                 </div>
             </div>
         </section>
-        
-        
+
+
 
 
         <!-- Section Parcours -->
@@ -260,20 +265,22 @@
                 <div class="timeline">
                     <!-- Personnage -->
                     <div id="character" class="character">🤖</div>
-        
+
                     <!-- Années -->
-                    <div class="year" data-year="2022" data-details="École Supérieure de Transport et de Communication à Hanoi, Vietnam.">
+                    <div class="year" data-year="2022"
+                        data-details="École Supérieure de Transport et de Communication à Hanoi, Vietnam.">
                         2022
                     </div>
                     <div class="year" data-year="2023" data-details="Entrée en BUT Informatique à l'IUT de Maubeuge.">
                         2023
                     </div>
-                    <div class="year" data-year="2024" data-details="Transfert pour continuer en BUT2 en Informatique à l'IUT de Lille.">
+                    <div class="year" data-year="2024"
+                        data-details="Transfert pour continuer en BUT2 en Informatique à l'IUT de Lille.">
                         2024
                     </div>
                 </div>
             </div>
-        
+
             <!-- Popup pour les informations -->
             <div id="popup" class="popup">
                 <div class="popup-content">
@@ -282,13 +289,13 @@
                 </div>
             </div>
         </section>
-        
+
 
         <!-- Section Projets -->
         <section id="projects" class="section">
             <div class="container">
                 <h2>Projets Informatiques</h2>
-        
+
                 <!-- Boutons de Filtrage -->
                 <div class="filter-buttons">
                     <button data-filter="all">Tous</button>
@@ -301,7 +308,7 @@
                     <button data-filter="apache">Apache</button>
                     <button data-filter="docker">Docker</button>
                 </div>
-        
+
                 <!-- Grille des Projets -->
                 <div class="projects-grid">
                     <!-- Projet 1 Classification -->
@@ -309,19 +316,21 @@
                         <img src="projects/Classification.png" alt="Classification des Données">
                         <div class="project-content">
                             <h3>Application de Classification des Données</h3>
-                            <p><strong>Objectif :</strong> Développer un outil de chargement et affichage interactif des données.</p>
+                            <p><strong>Objectif :</strong> Développer un outil de chargement et affichage interactif des
+                                données.</p>
                             <ul>
                                 <li>Gestion multi-vues</li>
                                 <li>Algo k-NN pour classifier les données</li>
                             </ul>
                             <p><strong>Technologie :</strong> Java, JavaFX, JUnit, Maven,StarUML,GitHub</p>
                             <div class="project-buttons">
-                                <a href="https://gitlab.univ-lille.fr/sae302/2024/I4_SAE3.3" class="btn" target="_blank">Code Source</a>
+                                <a href="https://gitlab.univ-lille.fr/sae302/2024/I4_SAE3.3" class="btn"
+                                    target="_blank">Code Source</a>
                                 <a href="#" class="btn" target="_blank">Voir la Démo</a>
                             </div>
                         </div>
                     </div>
-        
+
                     <!-- Projet 2 Agile -->
                     <div class="project-item visible" data-category="java junit github">
                         <img src="projects/Agile.jpg" alt="Projet Agile">
@@ -334,18 +343,20 @@
                             </ul>
                             <p><strong>Technologie :</strong> Java, JUnit, GitHub</p>
                             <div class="project-buttons">
-                                <a href="https://gitlab.univ-lille.fr/2024-projet-agile-de-rentree/groupe-10" class="btn" target="_blank">Code Source</a>
+                                <a href="https://gitlab.univ-lille.fr/2024-projet-agile-de-rentree/groupe-10"
+                                    class="btn" target="_blank">Code Source</a>
                                 <a href="#" class="btn" target="_blank">Voir la Démo</a>
                             </div>
                         </div>
                     </div>
-        
+
                     <!-- Projet 3 Réseaux -->
                     <div class="project-item visible" data-category="apache docker">
                         <img src="projects/Reseaux.jpg" alt="Installation Réseau">
                         <div class="project-content">
                             <h3>Installation de Services Réseaux</h3>
-                            <p><strong>Objectif :</strong> Configuration d'un serveur web déployé sur un réseau local.</p>
+                            <p><strong>Objectif :</strong> Configuration d'un serveur web déployé sur un réseau local.
+                            </p>
                             <ul>
                                 <li>Configuration Apache et SSH</li>
                                 <li>Déploiement avec Docker</li>
@@ -357,31 +368,34 @@
                             </div>
                         </div>
                     </div>
-        
+
                     <!-- Projet 4 RobotMineurs -->
                     <div class="project-item visible" data-category="java javafx junit github">
                         <img src="projects/RobotMineur.png" alt="Robo Miner">
                         <div class="project-content">
                             <h3>Robo Miner</h3>
-                            <p><strong>Objectif :</strong> Simulation de robots pour extraire des minerais dans un monde virtuel.</p>
+                            <p><strong>Objectif :</strong> Simulation de robots pour extraire des minerais dans un monde
+                                virtuel.</p>
                             <ul>
                                 <li>Programmation de robots automatisés</li>
                                 <li>Interactions graphiques avec JavaFX</li>
                             </ul>
                             <p><strong>Technologie :</strong> Java, JavaFX, JUnit,StarUML,GitHub</p>
                             <div class="project-buttons">
-                                <a href="https://github.com/Minhtue1203/robot-miner" class="btn" target="_blank">Code Source</a>
+                                <a href="https://github.com/Minhtue1203/robot-miner" class="btn" target="_blank">Code
+                                    Source</a>
                                 <a href="DemoProjects/DemoRobots.pdf" class="btn" target="_blank">Voir la Démo</a>
                             </div>
                         </div>
                     </div>
-        
+
                     <!-- Projet 5 BDD -->
                     <div class="project-item visible" data-category="python postgresql">
                         <img src="projects/cartecontrole.png" alt="Base de Données">
                         <div class="project-content">
                             <h3>Exploitation d'une Base de Données</h3>
-                            <p><strong>Objectif :</strong> Conception et exploitation d'une BDD pour une usine de production.</p>
+                            <p><strong>Objectif :</strong> Conception et exploitation d'une BDD pour une usine de
+                                production.</p>
                             <ul>
                                 <li>Programmation des cartes de contrôle</li>
                                 <li>Analyse statistique des performances</li>
@@ -396,62 +410,62 @@
                 </div>
             </div>
         </section>
-        
-        
 
 
 
 
-       <!-- Section Contact -->
-<section id="contact" class="section">
-    <div class="container">
-        <h2>Contactez-moi</h2>
 
-        <!-- Formulaire de contact -->
-        <form id="contactForm" action="mailto:minhtue1203@gmail.com" method="post" enctype="text/plain">
-            <label for="name">Nom :</label>
-            <input type="text" id="name" name="Nom" required>
-            <label for="email">Email :</label>
-            <input type="email" id="email" name="Email" required>
-            <label for="message">Message :</label>
-            <textarea id="message" name="Message" rows="4" required></textarea>
-            <button type="submit" class="button">Envoyer</button>
-        </form>
 
-        <!-- Icônes de contact -->
-        <div class="contact-icons">
-            <!-- Gmail -->
-            <a href="mailto:minhtue1203@gmail.com" class="contact-item" target="_blank">
-                <img src="images/gmail.jpg" alt="Gmail">
-                <span>minhtue1203@gmail.com</span>
-            </a>
+        <!-- Section Contact -->
+        <section id="contact" class="section">
+            <div class="container">
+                <h2>Contactez-moi</h2>
 
-            <!-- LinkedIn -->
-            <a href="https://www.linkedin.com/in/monlinkedin" class="contact-item" target="_blank">
-                <img src="images/linkedin.jpg" alt="LinkedIn">
-                <span>LinkedIn</span>
-            </a>
+                <!-- Formulaire de contact -->
+                <form id="contactForm" action="mailto:minhtue1203@gmail.com" method="post" enctype="text/plain">
+                    <label for="name">Nom :</label>
+                    <input type="text" id="name" name="Nom" required>
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" name="Email" required>
+                    <label for="message">Message :</label>
+                    <textarea id="message" name="Message" rows="4" required></textarea>
+                    <button type="submit" class="button">Envoyer</button>
+                </form>
 
-            <!-- Téléphone -->
-            <a href="tel:0656660268" class="contact-item">
-                <img src="images/phone.jpg" alt="Téléphone">
-                <span>06 56 66 02 68</span>
-            </a>
-        </div>
+                <!-- Icônes de contact -->
+                <div class="contact-icons">
+                    <!-- Gmail -->
+                    <a href="mailto:minhtue1203@gmail.com" class="contact-item" target="_blank">
+                        <img src="images/gmail.jpg" alt="Gmail">
+                        <span>minhtue1203@gmail.com</span>
+                    </a>
 
-        <!-- Téléchargement du CV -->
-        <div class="download-cv">
-            <p>Ou téléchargez directement mon CV :</p>
-            <a href="cv.pdf" download class="button">Télécharger mon CV</a>
-        </div>
-    </div>
-</section>
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/monlinkedin" class="contact-item" target="_blank">
+                        <img src="images/linkedin.jpg" alt="LinkedIn">
+                        <span>LinkedIn</span>
+                    </a>
 
-<!-- Footer -->
-<footer class="footer">
-    <div class="container">
-        <p>&copy; 2024 Minh-Tue Tran. Tous droits réservés.</p>
-    </div>
-</footer>
+                    <!-- Téléphone -->
+                    <a href="tel:0656660268" class="contact-item">
+                        <img src="images/phone.jpg" alt="Téléphone">
+                        <span>06 56 66 02 68</span>
+                    </a>
+                </div>
+
+                <!-- Téléchargement du CV -->
+                <div class="download-cv">
+                    <p>Ou téléchargez directement mon CV :</p>
+                    <a href="cv.pdf" download class="button">Télécharger mon CV</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2024 Minh-Tue Tran. Tous droits réservés.</p>
+            </div>
+        </footer>
 
 </html>
