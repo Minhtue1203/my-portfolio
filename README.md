@@ -56,6 +56,6 @@ Mon portfolio est déployé automatiquement grâce à un pipeline CI/CD. Voici l
 
 ---
 
-### Exemple de rendu en ligne :
+### Exemple de rendu en ligne:
 🌐 [Voir mon portfolio en ligne](https://my-portfolio-3yk7.onrender.com)
 
