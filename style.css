@@ -578,6 +578,7 @@ body.dark-mode .wave-container {
 }
 
 /*Project*/
+/*Project*/
 
 .filter-buttons {
     text-align: center;
@@ -605,6 +606,7 @@ body.dark-mode .wave-container {
     gap: 1.5rem;
 }
 
+/* Assure que toutes les cartes ont la même hauteur */
 .project-item {
     background: white;
     border-radius: 10px;
@@ -613,6 +615,9 @@ body.dark-mode .wave-container {
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 0.5s ease, transform 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* S'assure que toutes les cartes ont la même hauteur */
 }
 
 .project-item.visible {
@@ -630,9 +635,24 @@ body.dark-mode .wave-container {
     transform: scale(1.05);
 }
 
+/* S'assure que le contenu remplit l'espace disponible */
+.project-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Permet d'aligner les boutons en bas */
+}
+
+/* Alignement et uniformité des boutons */
+.project-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
 .project-buttons .btn {
-    display: inline-block;
-    margin: 0.5rem 0.5rem 0 0;
+    flex: 1;
+    text-align: center;
     padding: 0.5rem 1rem;
     background: #007BFF;
     color: white;
@@ -644,6 +664,7 @@ body.dark-mode .wave-container {
 .project-buttons .btn:hover {
     background: #0056b3;
 }
+
 
 
 
