@@ -1,3 +1,30 @@
+.language-switcher {
+    position: fixed;
+    top: 60px; /* Ajuste l'espacement pour qu'il ne touche pas la navbar */
+    right: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.language-switcher button {
+    background: #007BFF;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.language-switcher button:hover {
+    background: #0056b3;
+}
+
+
 /* Animation pour le fond du header */
 .header .gradient-bg {
     position: absolute;
@@ -664,6 +691,8 @@ body.dark-mode .wave-container {
 .project-buttons .btn:hover {
     background: #0056b3;
 }
+
+
 
 
 

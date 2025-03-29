@@ -4,12 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio de Minh-Tue Tran</title>
+    <title data-translate>Portfolio de Minh-Tue Tran</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 
 <body>
+    <!-- Boutons de langue -->
+    <div class="language-switcher">
+        <button onclick="changeLanguage('fr')">FR</button>
+        <button onclick="changeLanguage('en')">EN</button>
+    </div>
+
     <!-- Header avec fond animé -->
     <header class="header">
         <div class="gradient-bg">
@@ -23,54 +29,19 @@
             </div>
         </div>
         <div class="text-container">
-            <h1>Minh-Tue Tran</h1>
-            <p>Étudiant Informatique à IUT A, Spécialisation en déploiment et sécurité des applications</p>
+            <h1 data-translate>Minh-Tue Tran</h1>
+            <p data-translate>Étudiant Informatique à IUT A,Spécialisation en Déploiement et Sécurité</p>
             <nav class="nav">
                 <ul>
-                    <li><a href="#about">Présentation</a></li>
-                    <li><a href="#skills">Compétences</a></li>
-                    <li><a href="#projects">Projets</a></li>
-                    <li><a href="#languages">Langues</a></li>
-                    <li><a href="#hobbies">Passions</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#about" data-translate>Présentation</a></li>
+                    <li><a href="#skills" data-translate>Compétences</a></li>
+                    <li><a href="#projects" data-translate>Projets</a></li>
+                    <li><a href="#languages" data-translate>Langues</a></li>
+                    <li><a href="#hobbies" data-translate>Passions</a></li>
+                    <li><a href="#contact" data-translate>Contact</a></li>
                 </ul>
             </nav>
-
-
         </div>
-        <div class="wave-container">
-            <svg viewBox="0 0 120 28" xmlns="http://www.w3.org/2000/svg" class="wave">
-                <defs>
-                    <!-- Dégradé pour le mode clair -->
-                    <linearGradient id="dynamic-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stop-color="#007BFF" />
-                        <stop offset="50%" stop-color="#6C63FF" />
-                        <stop offset="100%" stop-color="#FF6584" />
-                    </linearGradient>
-
-                    <!-- Dégradé pour le mode sombre -->
-                    <linearGradient id="dark-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stop-color="#333333" />
-                        <stop offset="50%" stop-color="#444444" />
-                        <stop offset="100%" stop-color="#555555" />
-                    </linearGradient>
-                </defs>
-                <path d="M0,10 C30,20 60,0 120,10 L120,30 L0,30 Z" fill="url(#dynamic-gradient)">
-                    <animate repeatCount="indefinite" attributeName="d" dur="6s" values="
-                            M0,10 C30,20 60,0 120,10 L120,30 L0,30 Z; 
-                            M0,15 C30,10 60,30 120,10 L120,30 L0,30 Z; 
-                            M0,10 C30,20 60,0 120,10 L120,30 L0,30 Z
-                        " />
-                </path>
-            </svg>
-        </div>
-
-
-
-
-
-
-
     </header>
 
     <main>
@@ -82,10 +53,9 @@
                     <img src="images/Image1.jpg" alt="Profile Hover" class="profile-image-hover">
                 </div>
 
-
                 <div class="text-container">
-                    <h2>À propos de moi</h2>
-                    <p>
+                    <h2 data-translate>À propos de moi</h2>
+                    <p data-translate>
                         Étudiant en 2e année de BUT Informatique à l'IUT de Lille, je me distingue par une approche
                         méthodique et persévérante pour résoudre les problèmes techniques. Lors de projets comme la
                         simulation de robots mineurs et le développement d'une application de classification de données
@@ -93,14 +63,13 @@
                         collaborant avec mes coéquipiers grâce à des méthodes variées et un langage technique adapté, ce
                         qui nous a valu une excellente note.
                     </p>
-                    <p>
+                    <p data-translate>
                         Ma passion pour la magie influence mon travail de développeur : j'aime créer des solutions qui
                         impressionnent, surprennent et ont un style originaux. En équipe, je prends volontiers des
                         initiatives et apporte une touche de leadership discret, contribuant à l'organisation et au
                         succès des projets. Actuellement, je suis à la recherche d'un stage de 8 à 10 semaines à partir
                         du 10 avril pour approfondir mes compétences et mettre mes connaissances au service de backend
                         ou devops concrets.
-
                     </p>
                 </div>
             </div>
@@ -109,27 +78,26 @@
         <!-- Section Langues -->
         <section id="languages" class="section">
             <div class="container">
-                <h2>Langues</h2>
+                <h2 data-translate>Langues</h2>
                 <div class="language-cards">
                     <div class="language-card">
                         <img src="flags/vietnam.jpg" alt="Drapeau Vietnam" class="flag-icon">
-                        <h3>Vietnamien</h3>
-                        <p>Langue Maternelle</p>
+                        <h3 data-translate>Vietnamien</h3>
+                        <p data-translate>Langue Maternelle</p>
                     </div>
                     <div class="language-card">
                         <img src="flags/france.jpg" alt="Drapeau France" class="flag-icon">
-                        <h3>Français</h3>
-                        <p>DELF B2</p>
+                        <h3 data-translate>Français</h3>
+                        <p data-translate>DELF B2</p>
                     </div>
                     <div class="language-card">
                         <img src="flags/uk.jpg" alt="Drapeau Royaume-Uni" class="flag-icon">
-                        <h3>Anglais</h3>
-                        <p>Niveau B2</p>
+                        <h3 data-translate>Anglais</h3>
+                        <p data-translate>Niveau B2</p>
                     </div>
                 </div>
             </div>
         </section>
-
 
         <!-- Section Passions -->
         <section id="hobbies" class="section">
@@ -389,6 +357,35 @@
                         </div>
                     </div>
 
+                    <!-- Projet Gen AI -->
+                    <div class="project-item visible"
+                        data-category="python fastapi openapi streamlit docker kubernetes gcp">
+                        <img src="images/GEN_IA_Pic.png" alt="Gen AI - Grammar Correction" />
+                        <div class="project-content">
+                            <h3>Gen AI – Grammar Correction and Expression Clarification in French</h3>
+                            <p><strong>Objectif :</strong> Développement d'une API d'IA générative pour la correction
+                                grammaticale et l'adaptation du ton en français.</p>
+                            <ul>
+                                <li>Affinage d'un modèle Gen AI pour améliorer la correction grammaticale et
+                                    l'adaptation du ton (formel, courant, familier).</li>
+                                <li>Optimisation du modèle pour améliorer la qualité et la cohérence des corrections
+                                    grâce à une gestion efficace des tokens.</li>
+                                <li>Conception de l'UX/UI avec Streamlit pour une approche low-code.</li>
+                            </ul>
+                            <p><strong>Technologies :</strong> Python, FastAPI, OpenAPI, Streamlit, Docker, Kubernetes,
+                                GCP</p>
+                            <div class="project-buttons">
+                                <a href="https://github.com/Minhtue1203/french-chatbot" class="btn"
+                                    target="https://github.com/Minhtue1203/french-chatbot">Code
+                                    Source</a>
+                                <a href="https://french-chatbot-b8nuzwfxm5qjq7t6parnji.streamlit.app/" class="btn"
+                                    target="https://french-chatbot-b8nuzwfxm5qjq7t6parnji.streamlit.app/">Voir la
+                                    Démo</a>
+                            </div>
+                        </div>
+                    </div>
+
+
                     <!-- Projet 5 BDD -->
                     <div class="project-item visible" data-category="python postgresql">
                         <img src="projects/cartecontrole.png" alt="Base de Données">
@@ -402,11 +399,38 @@
                             </ul>
                             <p><strong>Technologie :</strong> PostgreSQL, Python,Jupiter</p>
                             <div class="project-buttons">
-                                <a href="https://github.com/Minhtue1203/my-portfolio/blob/main/CodeSource_JupyterNotebook_BDD_SAE/JupyterSection3_4.ipynb" class="btn" target="_blank">Code Source</a>
+                                <a href="https://github.com/Minhtue1203/my-portfolio/blob/main/CodeSource_JupyterNotebook_BDD_SAE/JupyterSection3_4.ipynb"
+                                    class="btn" target="_blank">Code Source</a>
                                 <a href="DemoProjects/DemoBDD.pdf" class="btn" target="_blank">Voir la Démo</a>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Projet 6 Déploiement Odoo -->
+                    <div class="project-item visible"
+                        data-category="bash docker postgresql traefik virtualisation sécurité">
+                        <img src="projects/picture_odoo.png" alt="Déploiement Odoo Multi-Clients">
+                        <div class="project-content">
+                            <h3>Déploiement Automatisé d’Odoo Multi-Clients</h3>
+                            <p><strong>Objectif :</strong> Automatiser le déploiement sécurisé d’instances Odoo pour
+                                différents clients.</p>
+                            <ul>
+                                <li>Création de 3 VM (PostgreSQL, Odoo, Sauvegarde) via script</li>
+                                <li>Déploiement d’Odoo par client avec base dédiée</li>
+                                <li>Accès par sous-domaine avec reverse proxy Traefik</li>
+                                <li>Script de sauvegarde automatique avec rsync</li>
+                            </ul>
+                            <p><strong>Technologies :</strong> Bash, Docker, PostgreSQL, Traefik, VBoxManage</p>
+                            <div class="project-buttons">
+                                <a href="https://gitlab.univ-lille.fr/paryss.mullier.etu/sae-deploiement" class="btn"
+                                    target="https://gitlab.univ-lille.fr/paryss.mullier.etu/sae-deploiement">Code Source</a>
+                                <a href="https://gitlab.univ-lille.fr/paryss.mullier.etu/sae-deploiement" class="btn" target="https://gitlab.univ-lille.fr/paryss.mullier.etu/sae-deploiement">Voir la Démo</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+
                 </div>
             </div>
         </section>

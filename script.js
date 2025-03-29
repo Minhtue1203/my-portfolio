@@ -198,6 +198,63 @@ document.addEventListener("scroll", () => {
 });
 
 
+// //Traduction    
+// const deepLApiKey = "265bf361-d784-47a6-8372-4e1c366fd033:fx"; // 🔑 Mets ta vraie clé API ici
+
+// // ✅ Fonction pour traduire un texte avec DeepL
+// async function translateTextDeepL(text, sourceLang, targetLang) {
+//     const url = "https://api-free.deepl.com/v2/translate";
+
+//     try {
+//         const response = await fetch(url, {
+//             method: "POST",
+//             headers: {
+//                 "Authorization": `DeepL-Auth-Key ${deepLApiKey}`, // 🔑 Authentification API
+//                 "Content-Type": "application/json"
+//             },
+//             body: JSON.stringify({
+//                 text: [text],
+//                 source_lang: sourceLang.toUpperCase(),
+//                 target_lang: targetLang.toUpperCase()
+//             })
+//         });
+
+//         if (!response.ok) throw new Error(`Erreur API: ${response.status} ${response.statusText}`);
+
+//         const data = await response.json();
+//         return data.translations[0].text; // ✅ Retourne le texte traduit
+//     } catch (error) {
+//         console.error("❌ Erreur lors de la traduction :", error);
+//         return text; // Retourne le texte original en cas d'erreur
+//     }
+// }
+
+// // ✅ Fonction pour changer la langue du site
+// async function changeLanguage(lang) {
+//     const elements = document.querySelectorAll("[data-translate]");
+
+//     for (let el of elements) {
+//         const originalText = el.getAttribute("data-original") || el.textContent;
+//         el.setAttribute("data-original", originalText); // 🔒 Sauvegarde du texte original
+
+//         if (lang === "fr") {
+//             el.textContent = originalText; // 🔄 Restauration du texte en FR
+//         } else {
+//             el.textContent = await translateTextDeepL(originalText, "FR", lang);
+//         }
+//     }
+
+//     localStorage.setItem("lang", lang); // 🔄 Sauvegarde la langue choisie
+// }
+
+// // ✅ Charger la langue enregistrée au démarrage
+// document.addEventListener("DOMContentLoaded", () => {
+//     const savedLang = localStorage.getItem("lang") || "fr";
+//     changeLanguage(savedLang);
+// });
+
+
+
 
 
 
