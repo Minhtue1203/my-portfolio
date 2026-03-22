@@ -1555,6 +1555,26 @@ body {
     list-style: none;
     margin: 0;
     padding: 0;
+    flex-wrap: wrap;
+}
+
+.nav ul li {
+    flex: 1 1 auto;
+    min-width: 120px;
+}
+
+.nav {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.nav ul {
+    white-space: nowrap;
+}
+
+.nav li {
+    display: inline-flex;
+    justify-content: center;
 }
 
 .nav a {
