@@ -941,23 +941,29 @@ body.dark-mode .wave-container {
 
 /* Contact Form Styles */
 #contactForm {
-    max-width: 600px;
+    max-width: 650px;
     margin: 0 auto 2rem;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 1rem;
     padding: 0 1rem;
-    width: min(100%, 90%);
+    width: min(100%, 92%);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
 }
 
 #contactForm label {
     font-weight: 600;
-    color: #333;
+    color: #fff;
     text-align: left;
-    margin-bottom: 0.25rem;
-    display: block;
+    margin: 0;
     font-size: 0.95rem;
 }
+
 
 #contactForm input,
 #contactForm textarea {
@@ -984,9 +990,9 @@ body.dark-mode .wave-container {
 }
 
 #contactForm button {
-    align-self: center;
-    width: 100%;
-    max-width: 240px;
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: min(260px, 100%);
     padding: 0.75rem 1.2rem;
     background: #007BFF;
     color: white;
