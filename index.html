@@ -10,10 +10,16 @@
 </head>
 
 <body>
-    <!-- Boutons de langue -->
+    <!-- Boutons de langue + thème -->
     <div class="language-switcher">
         <button onclick="changeLanguage('fr')">FR</button>
         <button onclick="changeLanguage('en')">EN</button>
+        <div id="themeSwitcher" class="theme-switcher" aria-label="Choisir mode thème">
+            <button data-theme="auto" class="theme-btn" aria-label="Mode automatique">Auto</button>
+            <button data-theme="light" class="theme-btn" aria-label="Mode clair">Clair</button>
+            <button data-theme="dark" class="theme-btn" aria-label="Mode sombre">Sombre</button>
+        </div>
+        <span id="themeModeIndicator" class="theme-indicator">Thème: auto</span>
     </div>
 
     <!-- Header avec fond animé -->
@@ -29,8 +35,8 @@
             </div>
         </div>
         <div class="text-container">
-            <h1 data-translate>Minh Tue Tran</h1>
-            <p data-translate>Étudiant Informatique à IUT A,Spécialisation en Déploiement et Sécurité</p>
+            <h1 id="heroTitle" data-translate>Minh Tue Tran</h1>
+            <p data-translate>Étudiant en 3ème année BUT Informatique à IUT Lille (Villeneuve d'Ascq) - Déploiement, Sécurité et CI/CD</p>
             <nav class="nav">
                 <ul>
                     <li><a href="#about" data-translate>Présentation</a></li>
@@ -56,20 +62,17 @@
                 <div class="text-container">
                     <h2 data-translate>À propos de moi</h2>
                     <p data-translate>
-                        Étudiant en 2e année de BUT Informatique à l'IUT de Lille, je me distingue par une approche
-                        méthodique et persévérante pour résoudre les problèmes techniques. Lors de projets comme la
-                        simulation de robots mineurs et le développement d'une application de classification de données
-                        à partir de fichiers CSV…, j'ai surmonté des barrières linguistiques en bien adapter et
-                        collaborant avec mes coéquipiers grâce à des méthodes variées et un langage technique adapté, ce
-                        qui nous a valu une excellente note.
+                        Actuellement en 3ème année de BUT Informatique à l'IUT de Lille (Villeneuve d'Ascq), je poursuis une
+                        spécialisation sur le déploiement d'applications sécurisées, les architectures cloud et la
+                        supervision des infrastructures. Mon parcours intègre des projets concrets (robotique, formation
+                        DevOps, traitement de données) et des stages en entreprise avec une très bonne appréciation de la
+                        commission de poursuite d’études.
                     </p>
                     <p data-translate>
-                        Ma passion pour la magie influence mon travail de développeur : j'aime créer des solutions qui
-                        impressionnent, surprennent et ont un style originaux. En équipe, je prends volontiers des
-                        initiatives et apporte une touche de leadership discret, contribuant à l'organisation et au
-                        succès des projets. Actuellement, je suis à la recherche d'un stage de 8 à 10 semaines à partir
-                        du 10 avril pour approfondir mes compétences et mettre mes connaissances au service de backend
-                        ou devops concrets.
+                        J’ai réalisé deux stages DevOps complémentaires en 2025, où j’ai automatisé pipelines CI/CD, déployé
+                        des clusters Kubernetes, intégré des outils de sécurité et assuré la montée en compétence
+                        d’équipes sur GitLab CI/CD, Jenkins, Docker et Terraform. Je recherche maintenant une alternance ou
+                        un stage en infrastructure, cloud native ou cybersécurité.
                     </p>
                 </div>
             </div>
@@ -88,7 +91,7 @@
                     <div class="language-card">
                         <img src="flags/france.jpg" alt="Drapeau France" class="flag-icon">
                         <h3 data-translate>Français</h3>
-                        <p data-translate>DELF B2</p>
+                        <p data-translate>DELF C2</p>
                     </div>
                     <div class="language-card">
                         <img src="flags/uk.jpg" alt="Drapeau Royaume-Uni" class="flag-icon">
@@ -141,51 +144,59 @@
             <div class="container">
                 <h2>Compétences</h2>
                 <div class="skills-grid">
-                    <!-- Développement Web -->
                     <div class="skill-card">
-                        <div class="skill-icon">💻</div>
-                        <h3>Développement Web</h3>
-                        <div class="progress-bar" data-label="90%" data-hidden="HTML niveau avancé">
-                            <div class="progress-fill" style="width: 90%;">HTML</div>
+                        <div class="skill-icon">📊</div>
+                        <h3>Monitoring & Observabilité</h3>
+                        <div class="progress-bar" data-label="85%" data-hidden="Icinga2 - surveill. infra">
+                            <div class="progress-fill" style="width: 85%;">Icinga2</div>
                         </div>
-                        <div class="progress-bar" data-label="80%" data-hidden="CSS niveau intermédiaire">
-                            <div class="progress-fill" style="width: 80%;">CSS</div>
+                        <div class="progress-bar" data-label="80%" data-hidden="Grafana - dashboards">
+                            <div class="progress-fill" style="width: 80%;">Grafana</div>
+                        </div>
+                        <div class="progress-bar" data-label="80%" data-hidden="SNMP - supervision">
+                            <div class="progress-fill" style="width: 80%;">SNMP</div>
                         </div>
                     </div>
 
-                    <!-- Base de Données -->
                     <div class="skill-card">
-                        <div class="skill-icon">🗃️</div>
-                        <h3>Base de Données</h3>
-                        <div class="progress-bar" data-label="85%" data-hidden="PostgreSQL - Niveau avancé">
-                            <div class="progress-fill" style="width: 85%;">PostgreSQL</div>
+                        <div class="skill-icon">🔧</div>
+                        <h3>DevOps & Infrastructure</h3>
+                        <div class="progress-bar" data-label="85%" data-hidden="Docker, GitLab CI, Terraform">
+                            <div class="progress-fill" style="width: 85%;">Docker / GitLab CI</div>
                         </div>
-                        <div class="progress-bar" data-label="75%" data-hidden="MySQL - Gestion simple">
-                            <div class="progress-fill" style="width: 75%;">MySQL</div>
+                        <div class="progress-bar" data-label="80%" data-hidden="Ansible, Jenkins">
+                            <div class="progress-fill" style="width: 80%;">Ansible / Jenkins</div>
+                        </div>
+                        <div class="progress-bar" data-label="75%" data-hidden="Kubernetes / Azure">
+                            <div class="progress-fill" style="width: 75%;">Kubernetes / Azure</div>
                         </div>
                     </div>
 
-                    <!-- Programmation -->
                     <div class="skill-card">
-                        <div class="skill-icon">☕</div>
-                        <h3>Programmation</h3>
-                        <div class="progress-bar" data-label="90%" data-hidden="Java - avancé">
-                            <div class="progress-fill" style="width: 90%;">Java</div>
+                        <div class="skill-icon">⚙️</div>
+                        <h3>Programmation & Backend</h3>
+                        <div class="progress-bar" data-label="90%" data-hidden="Java Spring Boot">
+                            <div class="progress-fill" style="width: 90%;">Java / Spring Boot</div>
                         </div>
-                        <div class="progress-bar" data-label="80%" data-hidden="Python - avancé">
-                            <div class="progress-fill" style="width: 80%;">Python</div>
+                        <div class="progress-bar" data-label="85%" data-hidden="Python" >
+                            <div class="progress-fill" style="width: 85%;">Python</div>
+                        </div>
+                        <div class="progress-bar" data-label="70%" data-hidden="React / NodeJS">
+                            <div class="progress-fill" style="width: 70%;">React / JavaScript</div>
                         </div>
                     </div>
 
-                    <!-- Outils -->
                     <div class="skill-card">
-                        <div class="skill-icon">🛠️</div>
-                        <h3>Outils</h3>
-                        <div class="progress-bar" data-label="85%" data-hidden="Git - avancé">
-                            <div class="progress-fill" style="width: 85%;">Git</div>
+                        <div class="skill-icon">🌐</div>
+                        <h3>Réseaux & Sécurité</h3>
+                        <div class="progress-bar" data-label="90%" data-hidden="TCP/IP, DNS, LB">
+                            <div class="progress-fill" style="width: 90%;">TCP/IP, DNS, Load Balancer</div>
                         </div>
-                        <div class="progress-bar" data-label="75%" data-hidden="Docker - intermédiaire">
-                            <div class="progress-fill" style="width: 75%;">Docker</div>
+                        <div class="progress-bar" data-label="80%" data-hidden="Cisco, Fortinet">
+                            <div class="progress-fill" style="width: 80%;">Cisco / Fortinet</div>
+                        </div>
+                        <div class="progress-bar" data-label="80%" data-hidden="Sécurité infra">
+                            <div class="progress-fill" style="width: 80%;">Sécurité des infrastructures</div>
                         </div>
                     </div>
                 </div>
@@ -239,12 +250,19 @@
                         data-details="École Supérieure de Transport et de Communication à Hanoi, Vietnam.">
                         2022
                     </div>
-                    <div class="year" data-year="2023" data-details="Entrée en BUT Informatique à l'IUT de Maubeuge.">
+                    <div class="year" data-year="2023"
+                        data-details="1ère année de BUT Informatique à l'IUT de Maubeuge (informatique générale).">
                         2023
                     </div>
                     <div class="year" data-year="2024"
-                        data-details="Transfert pour continuer en BUT2 en Informatique à l'IUT de Lille.">
+                        data-details="Transfert en BUT2 Informatique à l'IUT de Lille (Villeneuve d'Ascq), spécialisation
+                        déploiement sécurisé et systèmes critiques.">
                         2024
+                    </div>
+                    <div class="year" data-year="2025"
+                        data-details="Stages DevOps chez Airbus Defence and Space et CMC TI Hue Group (CI/CD, Docker,
+                        Kubernetes, GitLab CI, Jenkins, Ansible, Terraform).">
+                        2025
                     </div>
                 </div>
             </div>
@@ -254,6 +272,31 @@
                 <div class="popup-content">
                     <span id="popup-close" class="popup-close">&times;</span>
                     <p id="popup-text"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Expériences -->
+        <section id="experience" class="section">
+            <div class="container">
+                <h2>Expériences Professionnelles</h2>
+                <div class="experience-card">
+                    <h3>Stagiaire DevOps Junior - Airbus Defence and Space</h3>
+                    <span>Mars 2025 - Juillet 2025</span>
+                    <ul>
+                        <li>Création et optimisation de pipelines CI/CD (GitLab CI, Jenkins).</li>
+                        <li>Déploiement de conteneurs et services (Docker, Kubernetes, Terraform, Ansible).</li>
+                        <li>Participation à la sécurisation de flux et à l’automatisation des tests d’intégration.</li>
+                    </ul>
+                </div>
+                <div class="experience-card">
+                    <h3>Stagiaire DevOps (Dev applicatif + CI/CD) - CMC TI Hue Group</h3>
+                    <span>Avril 2025 - Juillet 2025</span>
+                    <ul>
+                        <li>Développement Java Spring Boot et tests (JUnit, Mockito, JaCoCo).</li>
+                        <li>Automatisation de déploiement et pipelines GitLab CI/CD, gestion de CI multi-projets.</li>
+                        <li>Conception d’une architecture Nginx + PostgreSQL avec surveillance et sécurité.</li>
+                    </ul>
                 </div>
             </div>
         </section>

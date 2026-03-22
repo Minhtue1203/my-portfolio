@@ -9,6 +9,85 @@ document.querySelectorAll('.nav a').forEach(anchor => {
     });
 });
 
+// --- Thème clair/sombre/auto ---
+const getSystemTheme = () => window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+
+function activateThemeButtons(theme) {
+    const themeButtons = document.querySelectorAll('.theme-btn');
+    themeButtons.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.theme === theme);
+    });
+}
+
+function applyTheme(theme) {
+    let effective = theme;
+    if (theme === 'auto') {
+        effective = getSystemTheme();
+        document.body.dataset.theme = 'auto';
+    } else {
+        document.body.dataset.theme = theme;
+    }
+
+    document.body.classList.toggle('dark-mode', effective === 'dark');
+    document.body.classList.toggle('light-mode', effective === 'light');
+
+    activateThemeButtons(document.body.dataset.theme);
+    localStorage.setItem('themeMode', document.body.dataset.theme);
+
+    const modeIndicator = document.getElementById('themeModeIndicator');
+    if (modeIndicator) {
+        modeIndicator.textContent = `Thème: ${document.body.dataset.theme}`;
+    }
+}
+
+function initTheme() {
+    const savedTheme = localStorage.getItem('themeMode') || 'auto';
+    applyTheme(savedTheme);
+
+    const themeButtons = document.querySelectorAll('.theme-btn');
+    themeButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            applyTheme(btn.dataset.theme);
+        });
+    });
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+        if (document.body.dataset.theme === 'auto') {
+            applyTheme('auto');
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initTheme);
+
+// --- Titre interactif animé ---
+const heroTitle = document.getElementById('heroTitle');
+if (heroTitle) {
+    const phrases = [
+        'Minh Tue Tran',
+        'Ingenieur DevOps en herbe',
+        'Architecte Cloud et Sécurité',
+        'Passionné par l’innovation'
+    ];
+    let phraseIndex = 0;
+
+    heroTitle.addEventListener('mouseenter', () => {
+        heroTitle.style.transform = 'translateY(-3px) scale(1.04)';
+    });
+    heroTitle.addEventListener('mouseleave', () => {
+        heroTitle.style.transform = 'translateY(0) scale(1)';
+    });
+    heroTitle.addEventListener('click', () => {
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+        heroTitle.textContent = phrases[phraseIndex];
+        heroTitle.style.color = `hsl(${Math.floor(Math.random() * 360)}, 85%, 60%)`;
+    });
+
+    setInterval(() => {
+        heroTitle.style.textShadow = `0 0 8px rgba(255, 255, 255, ${Math.random() * 0.5 + 0.2})`;
+    }, 1200);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const interactiveBubble = document.querySelector('.interactive');
     let currentX = 0, currentY = 0, targetX = 0, targetY = 0;
@@ -197,6 +276,36 @@ document.addEventListener("scroll", () => {
     }
 });
 
+
+// Thème sombre / clair
+const themeToggle = document.getElementById('themeToggle');
+
+function applyTheme(theme) {
+    if (theme === 'dark') {
+        document.body.classList.add('dark-mode');
+        themeToggle.textContent = '☀️';
+        themeToggle.setAttribute('aria-label', 'Basculer mode clair');
+    } else {
+        document.body.classList.remove('dark-mode');
+        themeToggle.textContent = '🌙';
+        themeToggle.setAttribute('aria-label', 'Basculer mode sombre');
+    }
+    localStorage.setItem('themeMode', theme);
+}
+
+function initTheme() {
+    const savedTheme = localStorage.getItem('themeMode') || 'light';
+    applyTheme(savedTheme);
+}
+
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        const current = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+        applyTheme(current === 'dark' ? 'light' : 'dark');
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initTheme);
 
 // //Traduction    
 // const deepLApiKey = "265bf361-d784-47a6-8372-4e1c366fd033:fx"; // 🔑 Mets ta vraie clé API ici
