@@ -4,16 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-translate>Portfolio de Minh-Tue Tran</title>
+    <title>Portfolio de Minh-Tue Tran</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 
 <body>
-    <!-- Boutons de langue + thème -->
+    <!-- Thème Switcher -->
     <div class="language-switcher">
-        <button onclick="changeLanguage('fr')">FR</button>
-        <button onclick="changeLanguage('en')">EN</button>
         <div id="themeSwitcher" class="theme-switcher" aria-label="Choisir mode thème">
             <button data-theme="auto" class="theme-btn" aria-label="Mode automatique">Auto</button>
             <button data-theme="light" class="theme-btn" aria-label="Mode clair">Clair</button>
@@ -35,16 +33,16 @@
             </div>
         </div>
         <div class="text-container">
-            <h1 id="heroTitle" data-translate>Minh Tue Tran</h1>
-            <p data-translate>Étudiant en 3ème année BUT Informatique à IUT Lille (Villeneuve d'Ascq) - Déploiement, Sécurité et CI/CD</p>
+            <h1 id="heroTitle">Minh Tue Tran</h1>
+            <p>Étudiant en 3ème année BUT Informatique à IUT Lille (Villeneuve d'Ascq) - Déploiement, Sécurité et CI/CD</p>
             <nav class="nav">
                 <ul>
-                    <li><a href="#about" data-translate>Présentation</a></li>
-                    <li><a href="#skills" data-translate>Compétences</a></li>
-                    <li><a href="#projects" data-translate>Projets</a></li>
-                    <li><a href="#languages" data-translate>Langues</a></li>
-                    <li><a href="#hobbies" data-translate>Passions</a></li>
-                    <li><a href="#contact" data-translate>Contact</a></li>
+                    <li><a href="#about">Présentation</a></li>
+                    <li><a href="#skills">Compétences</a></li>
+                    <li><a href="#projects">Projets</a></li>
+                    <li><a href="#languages">Langues</a></li>
+                    <li><a href="#hobbies">Passions</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -60,15 +58,15 @@
                 </div>
 
                 <div class="text-container">
-                    <h2 data-translate>À propos de moi</h2>
-                    <p data-translate>
+                    <h2>À propos de moi</h2>
+                    <p>
                         Actuellement en 3ème année de BUT Informatique à l'IUT de Lille (Villeneuve d'Ascq), je poursuis une
                         spécialisation sur le déploiement d'applications sécurisées, les architectures cloud et la
                         supervision des infrastructures. Mon parcours intègre des projets concrets (robotique, formation
                         DevOps, traitement de données) et des stages en entreprise avec une très bonne appréciation de la
                         commission de poursuite d’études.
                     </p>
-                    <p data-translate>
+                    <p>
                         J’ai réalisé deux stages DevOps complémentaires en 2025, où j’ai automatisé pipelines CI/CD, déployé
                         des clusters Kubernetes, intégré des outils de sécurité et assuré la montée en compétence
                         d’équipes sur GitLab CI/CD, Jenkins, Docker et Terraform. Je recherche maintenant une alternance ou
@@ -81,22 +79,22 @@
         <!-- Section Langues -->
         <section id="languages" class="section">
             <div class="container">
-                <h2 data-translate>Langues</h2>
+                <h2>Langues</h2>
                 <div class="language-cards">
                     <div class="language-card">
                         <img src="flags/vietnam.jpg" alt="Drapeau Vietnam" class="flag-icon">
-                        <h3 data-translate>Vietnamien</h3>
-                        <p data-translate>Langue Maternelle</p>
+                        <h3>Vietnamien</h3>
+                        <p>Langue Maternelle</p>
                     </div>
                     <div class="language-card">
                         <img src="flags/france.jpg" alt="Drapeau France" class="flag-icon">
-                        <h3 data-translate>Français</h3>
-                        <p data-translate>DELF C2</p>
+                        <h3>Français</h3>
+                        <p>DELF C2</p>
                     </div>
                     <div class="language-card">
                         <img src="flags/uk.jpg" alt="Drapeau Royaume-Uni" class="flag-icon">
-                        <h3 data-translate>Anglais</h3>
-                        <p data-translate>Niveau B2</p>
+                        <h3>Anglais</h3>
+                        <p>Niveau B2</p>
                     </div>
                 </div>
             </div>
@@ -211,22 +209,32 @@
                 <h2>Soft Skills</h2>
                 <div class="skills-grid">
                     <div class="skill-card"
-                        data-description="Je m'adapte facilement aux nouveaux environnements et équipes. Mon changement de parcours à l'IUT témoigne de ma capacité à m'adapter rapidement et m'a permis de développer des compétences solides et dynamiques en programmation, notamment avec Python et Java">
+                        data-description="Je m'adapte facilement aux nouveaux environnements et équipes. Mon changement de parcours à l'IUT témoigne de ma capacité à m'adapter rapidement. Je suis à l'écoute des besoins de mes collègues et j'ajuste mon approche pour une meilleure collaboration. Cette flexibilité m'a permis de développer des compétences solides en programmation et en communication avec différents profils.">
                         <h3>Adaptabilité</h3>
                         <p class="skill-description"></p>
                     </div>
                     <div class="skill-card"
-                        data-description="Face à un problème, je persévère en explorant plusieurs solutions et en analysant les logs d'erreur pour identifier des pistes. J'effectue également des recherches approfondies afin de mieux comprendre la cause du problème. Cette approche me permet de trouver des solutions efficaces et d'apprendre continuellement.">
+                        data-description="Je communique avec empathie, en écoutant activement mes collègues et en comprenant leurs préoccupations. Lors de mes stages, j'ai créé une relation de confiance avec les équipes en montrant de l'intérêt pour leurs perspectives. Je sais valoriser les contributions de chacun et créer un environnement inclusif où tout le monde se sent entendu et respecté.">
+                        <h3>Empathie & Communication</h3>
+                        <p class="skill-description"></p>
+                    </div>
+                    <div class="skill-card"
+                        data-description="Je gère le stress en restant calme et organisé face aux défis. Lors de situations critiques en déploiement ou de deadlines serrées, je priorise les tâches, me concentre sur les solutions et maintiens une communication claire avec l'équipe. Je pratique également la respiration et la réflexion pour rester lucide. Mes passions (guitare, basket, magie) me permettent de me détendre et de cultiver la sérénité.">
+                        <h3>Gestion du Stress</h3>
+                        <p class="skill-description"></p>
+                    </div>
+                    <div class="skill-card"
+                        data-description="Face à un problème, je persévère en explorant plusieurs solutions et en analysant les logs d'erreur pour identifier des pistes. J'effectue également des recherches approfondies afin de mieux comprendre la cause. Même en cas de difficulté, je reste motivé et j'encourage mon équipe avec positivité. Cette approche tenace me permet de trouver des solutions efficaces et d'apprendre continuellement.">
                         <h3>Persévérance</h3>
                         <p class="skill-description"></p>
                     </div>
                     <div class="skill-card"
-                        data-description="Je suis rigoureux dans mon travail, ce qui me permet d’assurer la qualité et la précision de chaque tâche. Avant de finaliser une tâche, je vérifie chaque détail en effectuant des contrôles minutieux et en analysant les éventuelles erreurs pour éviter les imprévus. De plus, j’organise mon travail de manière méthodique en suivant des bonnes pratiques comme la planification, la relecture et la documentation claire">
+                        data-description="Je suis rigoureux dans mon travail, ce qui me permet d'assurer la qualité et la précision de chaque tâche. Avant de finaliser une tâche, je vérifie chaque détail en effectuant des contrôles minutieux. J'organise mon travail de manière méthodique en suivant des bonnes pratiques comme la planification, la relecture et la documentation claire, ce qui facilite la collaboration avec mes collègues.">
                         <h3>Rigueur</h3>
                         <p class="skill-description"></p>
                     </div>
                     <div class="skill-card"
-                        data-description="J'aborde les problèmes avec des solutions créatives et originales. Grâce à ma passion pour la magie, je sais anticiper les attentes et je recherche toujours des méthodes impressionnantes et efficaces">
+                        data-description="J'aborde les problèmes avec des solutions créatives et originales. Grâce à ma passion pour la magie, je sais anticiper les attentes et recréer des moments impactants. En tant qu'ingénieur DevOps, j'innove dans les pipelines d'automatisation et je propose des approches originales pour optimiser les processus. Je recherche toujours des méthodes efficaces et impressionnantes.">
                         <h3>Créativité</h3>
                         <p class="skill-description"></p>
                     </div>
@@ -286,7 +294,7 @@
                     <ul>
                         <li>Création et optimisation de pipelines CI/CD (GitLab CI, Jenkins).</li>
                         <li>Déploiement de conteneurs et services (Docker, Kubernetes, Terraform, Ansible).</li>
-                        <li>Participation à la sécurisation de flux et à l’automatisation des tests d’intégration.</li>
+                        <li>Participation à la sécurisation de flux et à l'automatisation des tests d'intégration.</li>
                     </ul>
                 </div>
                 <div class="experience-card">
@@ -295,7 +303,7 @@
                     <ul>
                         <li>Développement Java Spring Boot et tests (JUnit, Mockito, JaCoCo).</li>
                         <li>Automatisation de déploiement et pipelines GitLab CI/CD, gestion de CI multi-projets.</li>
-                        <li>Conception d’une architecture Nginx + PostgreSQL avec surveillance et sécurité.</li>
+                        <li>Conception d'une architecture Nginx + PostgreSQL avec surveillance et sécurité.</li>
                     </ul>
                 </div>
             </div>

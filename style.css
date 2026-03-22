@@ -109,12 +109,13 @@ body.light-mode .nav {
 }
 
 body.dark-mode {
-    background: #0b0f1e;
+    background: #050814;
     color: #dbe8fc;
 }
 
 body.dark-mode .nav {
-    background-color: #0b1c38;
+    background-color: #0b223d;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.35);
 }
 
 body.dark-mode .language-switcher,
@@ -128,10 +129,49 @@ body.dark-mode .experience-card,
 body.dark-mode .timeline,
 body.dark-mode .popup-content,
 body.dark-mode #contact {
-    background: #10172d;
-    color: #e4edf9;
-    border-color: #21477f;
+    background: #0d1e32;
+    color: #e6f2ff;
+    border: 1px solid rgba(144, 181, 245, 0.42);
+    box-shadow: 0 8px 20px rgba(3, 12, 30, 0.35);
 }
+
+body.dark-mode .theme-switcher,
+body.dark-mode .language-switcher {
+    background: rgba(10, 24, 42, 0.8);
+    border: 1px solid rgba(126, 159, 233, 0.25);
+}
+
+body.dark-mode .theme-btn {
+    color: #d5e5ff;
+}
+
+body.dark-mode .theme-btn.active,
+body.dark-mode .theme-btn:hover {
+    background: #1c65d9;
+    color: #ffffff;
+}
+
+body.dark-mode .project-content,
+body.dark-mode .contact-icons .contact-item,
+body.dark-mode .download-cv,
+body.dark-mode .footer {
+    background: #0f2348;
+}
+
+body.dark-mode .progress-fill {
+    background: linear-gradient(90deg, #2a83ff, #1f5cd8);
+    color: #ffffff;
+}
+
+body.dark-mode .skill-card h3,
+body.dark-mode .language-card h3,
+body.dark-mode .experience-card h3,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h1 {
+    color: #f4f8ff;
+}
+
 
 /* Ajuster header pour apply dark-mode */
 body.dark-mode .header .text-container h1,
@@ -999,10 +1039,108 @@ body.dark-mode .contact-item span {
 }
 
 body.dark-mode .project-item {
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.32);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.42);
 }
 
-body.dark-mode .top{ }
+body.dark-mode .section,
+body.dark-mode .container,
+body.dark-mode .project-item,
+body.dark-mode .skill-card,
+body.dark-mode .language-card,
+body.dark-mode .gallery-item,
+body.dark-mode .experience-card,
+body.dark-mode .timeline,
+body.dark-mode .popup-content,
+body.dark-mode #contact,
+body.dark-mode .download-cv,
+body.dark-mode .filter-buttons button,
+body.dark-mode .project-buttons .btn,
+body.dark-mode .contact-item,
+body.dark-mode .language-switcher,
+body.dark-mode .section#soft-skills,
+body.dark-mode .section#skills,
+body.dark-mode #contact,
+body.dark-mode #source-code,
+body.dark-mode .timeline,
+body.dark-mode .section#timeline {
+    background: linear-gradient(140deg, #0f1d37 0%, #0a1428 70%, #0f1931 100%);
+    border-color: rgba(124, 163, 218, 0.4);
+    color: #d7e8ff;
+}
+
+body.dark-mode .section#soft-skills,
+body.dark-mode .section#skills,
+body.dark-mode #source-code,
+body.dark-mode #contact,
+body.dark-mode .timeline,
+body.dark-mode .section#timeline {
+    background: #0b1330;
+}
+
+
+body.dark-mode .section {
+    background: #0b1330;
+    border-color: rgba(94, 135, 192, 0.45);
+}
+
+body.dark-mode .footer {
+    background: #061229;
+    color: #d5e8ff;
+    border-top: 1px solid rgba(102, 148, 205, 0.4);
+}
+
+body.dark-mode .project-item,
+body.dark-mode .skill-card,
+body.dark-mode .language-card,
+body.dark-mode .gallery-item,
+body.dark-mode .experience-card,
+body.dark-mode .project-content,
+body.dark-mode .download-cv,
+body.dark-mode .timeline,
+body.dark-mode .popup-content,
+body.dark-mode #contact {
+    background: #0d1b2f;
+}
+body.dark-mode .project-buttons .btn,
+body.dark-mode .filter-buttons button,
+body.dark-mode .download-cv .button {
+    background: #1e6eff;
+    border: 1px solid #3392ff;
+    color: #fff;
+}
+
+body.dark-mode .project-buttons .btn:hover,
+body.dark-mode .filter-buttons button:hover,
+body.dark-mode .download-cv .button:hover {
+    background: #2f84ff;
+}
+
+body.dark-mode .popup-content {
+    background: #111c34;
+    color: #eef5ff;
+}
+
+body.dark-mode .popup-close {
+    color: #fff;
+}
+
+body.dark-mode .year:hover {
+    color: #84b7ff;
+}
+
+body.dark-mode .theme-btn,
+body.dark-mode .language-switcher button {
+    color: #d2e7ff;
+}
+
+body.dark-mode .theme-btn.active,
+body.dark-mode .theme-btn:hover,
+body.dark-mode .language-switcher button:hover {
+    background: #245edf;
+    color: #ffffff;
+}
+
+body.dark-mode .top { }
 
 /* Responsive design (mobile-first) */
 @media (max-width: 900px) {
