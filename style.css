@@ -1061,12 +1061,21 @@ body.dark-mode .section#soft-skills,
 body.dark-mode .section#skills,
 body.dark-mode #contact,
 body.dark-mode #source-code,
+body.dark-mode .section#timeline {
+    background: linear-gradient(140deg, #0f1d37 0%, #0a1428 70%, #0f1931 100%) !important;
+    border-color: rgba(124, 163, 218, 0.4) !important;
+    color: #d7e8ff !important;
+}
+
+body.dark-mode .section#soft-skills,
+body.dark-mode .section#skills,
+body.dark-mode #source-code,
+body.dark-mode #contact,
 body.dark-mode .timeline,
 body.dark-mode .section#timeline {
-    background: linear-gradient(140deg, #0f1d37 0%, #0a1428 70%, #0f1931 100%);
-    border-color: rgba(124, 163, 218, 0.4);
-    color: #d7e8ff;
+    background: #0b1330 !important;
 }
+
 
 body.dark-mode .section#soft-skills,
 body.dark-mode .section#skills,
