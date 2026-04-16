@@ -1770,3 +1770,207 @@ h2 {
 .source-link:hover {
     background: #0056b3;
 }
+
+/* Force fixed dark theme */
+body,
+body.light-mode,
+body.dark-mode {
+    background: #03101d !important;
+    color: #e4efff !important;
+}
+
+body * {
+    color: inherit !important;
+}
+
+.nav,
+.nav.scrolled,
+.language-switcher,
+.theme-switcher,
+.container,
+.project-item,
+.skill-card,
+.language-card,
+.gallery-item,
+.experience-card,
+.project-content,
+.popup-content,
+#contact,
+#contactForm,
+.download-cv .button,
+.filter-buttons button,
+.project-buttons .btn,
+.contact-item,
+.footer,
+#source-code {
+    background: rgba(6, 18, 35, 0.98) !important;
+    border: 1px solid rgba(48, 93, 171, 0.22) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.32) !important;
+}
+
+.section {
+    background: transparent !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #dbeeff !important;
+}
+
+p,
+li,
+span,
+a,
+input,
+textarea,
+button {
+    color: #cdd9f5 !important;
+}
+
+a {
+    color: #80b7ff !important;
+}
+
+a:hover {
+    color: #b1d4ff !important;
+}
+
+.progress-bar {
+    background: rgba(255, 255, 255, 0.07) !important;
+}
+
+.progress-fill {
+    background: linear-gradient(90deg, #2e76ff, #2496ff) !important;
+}
+
+.theme-btn,
+.language-switcher button,
+.source-link {
+    background: rgba(14, 45, 82, 0.95) !important;
+    color: #e7f3ff !important;
+    border: 1px solid rgba(54, 100, 181, 0.35) !important;
+}
+
+.theme-btn.active,
+.theme-btn:hover,
+.language-switcher button:hover,
+.source-link:hover {
+    background: #1f64c5 !important;
+    color: #fff !important;
+}
+
+.header {
+    background: #021124 !important;
+}
+
+.header::before,
+.gradient-bg {
+    display: none !important;
+}
+
+#heroTitle:hover {
+    color: #c8e1ff !important;
+}
+
+body.dark-mode .header .text-container h1,
+body.dark-mode .header .text-container p,
+body.dark-mode .header .text-container h2 {
+    color: #eef5ff !important;
+}
+
+/* Hide theme selector and enforce single dark mode */
+.language-switcher,
+#themeSwitcher,
+.theme-switcher,
+.theme-btn,
+.theme-indicator {
+    display: none !important;
+}
+
+html, body {
+    background: #03111d !important;
+    color: #e5efff !important;
+}
+
+.body,
+body,
+body.light-mode,
+body.dark-mode,
+.container,
+.section,
+.presentation,
+.text-container,
+.image-container,
+.header,
+.nav,
+.nav.scrolled,
+.skill-card,
+.language-card,
+.experience-card,
+.project-item,
+.project-content,
+.gallery-item,
+.popup-content,
+#contact,
+#contactForm,
+.contact-item,
+.filter-buttons button,
+.project-buttons .btn,
+.download-cv .button,
+#source-code {
+    background: rgba(3, 10, 24, 0.96) !important;
+    border-color: rgba(59, 98, 165, 0.33) !important;
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.4) !important;
+}
+
+.section {
+    background: transparent !important;
+}
+
+.text-container,
+.presentation,
+.image-container {
+    background: transparent !important;
+}
+
+.header {
+    background: #021124 !important;
+}
+
+.header::before,
+.gradient-bg {
+    display: none !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+a,
+button,
+label,
+p,
+li {
+    color: #e5efff !important;
+}
+
+input,
+textarea {
+    background: rgba(15, 24, 50, 0.98) !important;
+    color: #e8f1ff !important;
+    border: 1px solid rgba(78, 119, 184, 0.35) !important;
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+    outline: none !important;
+    border-color: #2e79ff !important;
+    box-shadow: 0 0 0 3px rgba(46, 118, 255, 0.16) !important;
+}
