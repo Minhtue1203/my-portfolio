@@ -1847,6 +1847,24 @@ a:hover {
     background: linear-gradient(90deg, #2e76ff, #2496ff) !important;
 }
 
+/* Ensure timeline dark theme */
+.section#timeline .timeline,
+body.dark-mode .timeline,
+body.dark-mode .section#timeline {
+    background: rgba(4, 12, 28, 0.98) !important;
+    border: 1px solid rgba(55, 100, 176, 0.28) !important;
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.35) !important;
+}
+
+.timeline-instruction {
+    color: #b8cdec !important;
+}
+
+.popup-content {
+    background: rgba(6, 18, 35, 0.98) !important;
+    border: 1px solid rgba(60, 106, 188, 0.25) !important;
+}
+
 .theme-btn,
 .language-switcher button,
 .source-link {
