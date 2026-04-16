@@ -101,6 +101,12 @@ select {
     font-weight: 600;
 }
 
+.language-switcher,
+.theme-switcher,
+.theme-indicator {
+    display: none !important;
+}
+
 body.light-mode {
     background: linear-gradient(180deg, #eaf3ff 0%, #f7fbff 100%);
     color: var(--text);
